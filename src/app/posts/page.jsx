@@ -3,6 +3,7 @@ export default async function PostsPage() {
     "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka"
   ); // call the API
   const cocktails = await response.json(); // parse the response as JSON
+  const drinkIds = cocktails.drinks.map((cocktail) => cocktail.idDrink);
 
   return (
     <>
